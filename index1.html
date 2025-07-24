@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+	.logo img {
+  	width: 50px; /* Adjust size as needed */
+  	height: auto;
+	}
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center; /* Center text or content */
+            color: white;
+        }
+
+        /* Full-Width Image */
+        .header-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0; /* Add padding for spacing */
+        }
+	  
+.centered-bold-text {
+  font-size: 1.9rem; /* Large font size for emphasis */
+  font-weight: 700; /* Bold text */
+  line-height: 1.4; /* Spacing between lines */
+  text-align: center; /* Center alignment */
+  color: #000; /* Black text */
+  font-family: 'Arial', sans-serif; /* Professional font style */
+  margin: 30px auto; /* Center within container with spacing */
+  max-width: 900px; /* Limit the text width for better readability */
+}
+
+        /* Logo Section */
+        .logo img {
+            height: 70px;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            padding: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: black; /* Text color */
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #D4A373; /* Highlight color */
+        }
+
+        /* Top Right Section */
+        .top-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .top-right a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .top-right a span {
+            background-color: #D4A373;
+            color: white;
+            font-size: 0.8rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+	    color: black;
+        }
+ 
+        .search-bar input {
+            width: 300px;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide navigation links on smaller screens */
+            }
+
+            .search-bar input {
+                width: 200px;
+            }
+        }
+	.add-to-cart-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.image-container {
+    overflow: hidden; /* Ensures zoomed image doesn't overflow */
+    border-radius: 8px;
+}
+
+/* Zoom Effect on Hover */
+.image-container img {
+    transition: transform 0.3s ease; /* Smooth transition for zoom */
+}
+
+.image-container:hover img {
+    transform: scale(1.1); /* Zoom the image to 110% size on hover */
+    cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #333; /* Slightly lighter black for hover effect */
+}
+       	 .oval-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px; /* Width of the oval */
+            height: 100px; /* Height of the oval */
+            /* Background color of the oval */
+            border-radius: 50px; /* Fully round edges */
+            /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+        }
+
+    
+        .discover-btn {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #007bff;
+            background-color:#ff7f50 ;
+            border: none;
+            border-radius: 25px; /* Smooth rounded edges */
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .discover-btn:hover {
+            background-color: #ffebcd; /* Slightly gray background on hover */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        @media (max-width: 480px) {
+            .top-right {
+                gap: 10px;
+	}
+  }    
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #1DA1F2; /* Twitter Blue */
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+</style>
+</head>
+<body>
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        Get Extra 10% Discount, Use Code <strong>AJMAL10</strong>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <!-- Full-Width Image -->
+       
+        <!-- Content Container -->
+        <div class="container">
+	<div class="logo">
+    <img src="C:\Users\meena\OneDrive\Desktop\iwt2\AJMAL-LOGO3.webp" alt="Logo">
+  </div>
+            <!-- Logo Section -->
+           
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Ajmal Studio</a></li>
+                    <li><a href="#">Gifting</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Our Stores</a></li>
+                    <li><a href="#">Press & Media</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                </ul>
+            </nav>
+
+            <!-- Search and Icons -->
+            <div class="top-right">
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                </div>
+
+                <!-- Search Icon -->
+                <a href="#" title="Search">🔍</a>
+                <!-- Cart Icon -->
+                <a href="#" title="Cart">
+                    🛒
+                    <span>0</span> <!-- Cart count -->
+                </a>
+                <!-- User Icon -->
+                <a href="#" title="User">👤</a>
+            </div>
+        </div>
+    </header>
+ <img src='C:/Users/meena/OneDrive/Desktop/iwt2/back.png' alt="Header Image" class="header-image">
+<br><br>
+<center>
+<div class="centered-bold-text">
+  It's an art. Craft. And science. At Ajmal Perfumes, we're in the business of creating memories that are everlasting through our fragrances.
+</div>
+
+  <div class="oval-container">
+        <a href="#" class="discover-btn">Discover</a>
+    </div>
+</center>
+<!-- Product Section -->
+<section style="padding: 40px 20px; background-color: #f9f9f9;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 2rem; margin-bottom: 20px;">NEW FEATURES</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <!-- Product Card 1 -->
+            <div style="background: #fff; border: 1px solid #ddd; padding: 15px; text-align: center; border-radius: 8px;">
+                <span style="background: black; color: white; padding: 2px 10px; font-size: 0.8rem; border-radius: 15px; position: absolute; margin-left: -40px;">NEW</span>
+		<div class="image-container">
+                <img src="C:\Users\meena\OneDrive\Desktop\iwt2\per1.png" alt="Kyros Perfume" style="max-width: 100%; border-radius: 8px;">
+		</div>
+                <h3 style="font-size: 1rem; margin: 10px 0;">Eau De Parfum 100ml For Men</h3>
+                <p><strong>₹899.00</strong> <span style="text-decoration: line-through; color: #999;">₹1,099.00</span> <span style="color: green;">18% Off</span></p>
+		<br>
+                   <button class="add-to-cart-btn">Add to Cart</button>
+
+            </div>
+
+            <!-- Product Card 2 -->
+            <div style="background: #fff; border: 1px solid #ddd; padding: 15px; text-align: center; border-radius: 8px;">
+                <span style="background: black; color: white; padding: 2px 10px; font-size: 0.8rem; border-radius: 15px; position: absolute; margin-left: -40px;">NEW</span>
+		<div class="image-container">
+                <img src="C:\Users\meena\OneDrive\Desktop\iwt2\per2.png" alt="Gold Series Perfume" style="max-width: 100%; border-radius: 8px;">
+                 </div>
+                <h3 style="font-size: 1rem; margin: 10px 0;">Gold Series Concentrated Perfume Gift Set</h3>
+                <p><strong>₹899.00</strong> <span style="text-decoration: line-through; color: #999;">₹1,299.00</span> <span style="color: green;">31% Off</span></p>
+		<br>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div style="background: #fff; border: 1px solid #ddd; padding: 15px; text-align: center; border-radius: 8px;">
+                <span style="background: red; color: white; padding: 2px 10px; font-size: 0.8rem; border-radius: 15px; position: absolute; margin-left: -40px;">SALE</span>
+		<div class="image-container">
+                <img src="C:\Users\meena\OneDrive\Desktop\iwt2\per3.png" alt="Celebration Gift Set" style="max-width: 100%; border-radius: 8px;">
+		</div>
+                <h3 style="font-size: 1rem; margin: 10px 0;">Celebration By Ajmal Fragrance Gift Set</h3>
+                <p><strong>₹1,199.00</strong> <span style="text-decoration: line-through; color: #999;">₹2,000.00</span> <span style="color: green;">40% Off</span></p>
+		<br>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div style="background: #fff; border: 1px solid #ddd; padding: 15px; text-align: center; border-radius: 8px;">
+                <span style="background: black; color: white; padding: 2px 10px; font-size: 0.8rem; border-radius: 15px; position: absolute; margin-left: -40px;">NEW</span>
+		<div class="image-container">
+                <img src="C:\Users\meena\OneDrive\Desktop\iwt2\per4.png" alt="Scent of the Ocean" style="max-width: 100%; border-radius: 8px;">
+                </div>
+                <h3 style="font-size: 1rem; margin: 10px 0;">Scent Of The Ocean Eau De Parfum 100ml</h3>
+                <p><strong>₹899.00</strong> <span style="text-decoration: line-through; color: #999;">₹1,099.00</span> <span style="color: green;">18% Off</span></p>
+		<br>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+<footer style="background-color: black; color: white; padding: 40px 20px; font-size: 14px; line-height: 1.5;">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <!-- Social Media and Links Section -->
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+            <h3 style="text-transform: uppercase; font-size: 16px; margin-bottom: 20px;">Follow Us</h3>
+          
+ <div class="social-icons">
+  <!-- Facebook Icon -->
+  <a href="#" title="Facebook" class="social-icon" aria-label="Facebook">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="icon">
+      <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h11.495v-9.294H9.69v-3.622h3.129V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.464.098 2.795.142v3.24h-1.917c-1.505 0-1.797.715-1.797 1.764v2.311h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.325-.593 1.325-1.324V1.325C24 .593 23.407 0 22.675 0z" />
+    </svg>
+  </a>
+  
+  <!-- Instagram Icon -->
+  <a href="#" title="Instagram" class="social-icon" aria-label="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="icon">
+      <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.332 3.608 1.308.975.975 1.246 2.243 1.308 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.332 2.633-1.308 3.608-.975.975-2.243 1.246-3.608 1.308-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.246-2.243-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.062-1.366.332-2.633 1.308-3.608.975-.975 2.243-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163M12 0C8.741 0 8.332.015 7.053.072 5.775.129 4.574.364 3.533 1.406 2.491 2.448 2.257 3.649 2.2 4.927.184 8.314.184 11.685 2.2 15.073c.057 1.278.291 2.48 1.333 3.522 1.042 1.042 2.243 1.276 3.521 1.333 3.387 2.016 6.758 2.016 10.146 0 1.278-.057 2.479-.291 3.521-1.333 1.042-1.042 1.276-2.243 1.333-3.521 2.016-3.388 2.016-6.759 0-10.146C21.509 2.448 20.308 2.213 19.03 2.156 15.642.184 12.315.184 9.015 2.156 8.287.015 8.878 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.151a3.99 3.99 0 110-7.98 3.99 3.99 0 010 7.98zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
+    </svg>
+  </a>
+  
+  <!-- Twitter Icon -->
+  <a href="#" title="Twitter" class="social-icon" aria-label="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="icon">
+      <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775a4.92 4.92 0 002.163-2.724 9.86 9.86 0 01-3.127 1.195 4.92 4.92 0 00-8.384 4.482A13.965 13.965 0 011.64 3.15a4.932 4.932 0 001.523 6.573 4.93 4.93 0 01-2.23-.616v.061a4.924 4.924 0 003.946 4.827 4.936 4.936 0 01-2.224.084 4.927 4.927 0 004.6 3.419A9.876 9.876 0 010 21.543a13.924 13.924 0 007.548 2.211c9.142 0 14.307-7.72 13.995-14.646a9.936 9.936 0 002.431-2.539z" />
+    </svg>
+  </a>
+ <a href="#" title="Pinterest" class="social-icon" aria-label="Pinterest">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 4.845 3.685 8.875 8.535 9.786-.118-.83-.224-2.1.045-3.005.242-.829 1.557-5.279 1.557-5.279s-.398-.798-.398-1.975c0-1.848 1.073-3.232 2.41-3.232 1.136 0 1.683.854 1.683 1.875 0 1.143-.726 2.855-1.1 4.444-.31 1.313.657 2.384 1.946 2.384 2.335 0 3.919-2.46 3.919-6.01 0-3.14-2.252-5.34-5.473-5.34-3.732 0-5.92 2.796-5.92 5.684 0 1.127.432 2.338.974 2.997a.392.392 0 01.09.377c-.1.414-.324 1.313-.368 1.5-.06.242-.198.292-.459.175C6.053 15.856 5.2 13.91 5.2 12c0-4.093 3.448-8.093 9.815-8.093 5.159 0 8.485 3.728 8.485 7.707 0 5.358-2.96 9.227-7.29 9.227-1.464 0-2.843-.792-3.314-1.686 0 0-.791 3.153-.964 3.732-.293 1.01-1.086 2.027-1.72 2.815A12.002 12.002 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+    </svg>
+  </a>
+
+</div>
+<br>
+
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="#" style="color: white; text-decoration: none;">Contact Us</a>
+                <a href="#" style="color: white; text-decoration: none;">Privacy</a>
+                <a href="#" style="color: white; text-decoration: none;">Terms And Conditions</a>
+                <a href="#" style="color: white; text-decoration: none;">Return, Refund & Cancellation</a>
+                <a href="#" style="color: white; text-decoration: none;">Order Tracking</a>
+                <a href="#" style="color: white; text-decoration: none;">Shipping Policy</a>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+            <h3 style="text-transform: uppercase; font-size: 16px; margin-bottom: 20px;">Contact Us</h3>
+            <p>If you'd like to get in touch, please send us a mail during regular business hours.</p>
+	    <br>
+            <p style="font-weight: bold;">ajmal.support@nha-world.com</p>
+        </div>
+    </div>
+    <!-- Copyright Section -->
+    <div style="text-align: center; margin-top: 30px; border-top: 1px solid white; padding-top: 20px;">
+        <p>COPYRIGHTS © 2025 AJMALSTUDIO. ALL RIGHTS RESERVED.</p>
+           </div>
+</footer>
+ 
+</body>
+</html>

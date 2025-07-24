@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        /* Body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #43cea2, #185a9d); /* New gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        /* Container styling */
+        .container {
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 30px;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+            text-align: center;
+            width: 350px;
+            color: #333333;
+            backdrop-filter: blur(5px); /* Glass effect */
+        }
+
+        /* Heading */
+        .container h1 {
+            color: #333333;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Input group */
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            color: #444444;
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #dddddd;
+            outline: none;
+            background: #f9f9f9;
+            color: #333333;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #43cea2; /* Focus color */
+            box-shadow: 0 0 5px rgba(67, 206, 162, 0.5);
+        }
+
+        /* Button styling */
+        button {
+            background-color: #43cea2; /* Primary green */
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #3ba891; /* Slightly darker green */
+            transform: scale(1.05); /* Button grows slightly */
+        }
+
+        button:active {
+            transform: scale(1); /* Button returns to normal size */
+        }
+
+        /* Result styling */
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            animation: fadeIn 0.5s ease-in-out; /* Animation for result */
+        }
+
+        .result span {
+            font-size: 22px;
+            font-weight: bold;
+            color: #43cea2;
+        }
+
+        /* Keyframes for animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>BMI Calculator</h1>
+
+        <!-- Input group for weight -->
+        <div class="input-group">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" placeholder="Enter your weight" required>
+        </div>
+
+        <!-- Input group for height -->
+        <div class="input-group">
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" placeholder="Enter your height" required>
+        </div>
+
+        <!-- Calculate button -->
+        <button onclick="calculateBMI()">Calculate BMI</button>
+
+        <!-- Result display -->
+        <div class="result" id="result"></div>
+    </div>
+
+   
+    <script>
+        // Function to calculate BMI
+        function calculateBMI() {
+            let weight = document.getElementById("weight").value;
+            let height = document.getElementById("height").value;
+
+            // Validate input
+            if (weight === "" || height === "") {
+                alert("Please fill in both fields.");
+                return;
+            }
+
+            // Convert height to meters and calculate BMI
+            height = height / 100; // Convert cm to meters
+            let bmi = weight / (height * height); // BMI formula
+            bmi = bmi.toFixed(2); // Round to 2 decimal places
+
+            // Determine BMI category
+            let resultText = `Your BMI is <span>${bmi}</span><br>`;
+            if (bmi < 18.5) {
+                resultText += "<span style='color: #2196F3;'>Underweight</span>";
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                resultText += "<span style='color: #4CAF50;'>Normal weight</span>";
+            } else if (bmi >= 25 && bmi < 29.9) {
+                resultText += "<span style='color: #FF9800;'>Overweight</span>";
+            } else {
+                resultText += "<span style='color: #F44336;'>Obese</span>";
+            }
+
+            // Display the result
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+
+</body>
+</html>
